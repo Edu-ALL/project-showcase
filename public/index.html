@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project Showcase</title>
+        <link rel="icon" href="/assets/icon/favicon.png" />
+
+        <link href="/dist/output.css" rel="stylesheet" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+        />
+    </head>
+    <body>
+        <main>
+            <!-- Header -->
+            <section
+                class="w-full bg-banner bg-contain bg-center px-6 py-12 xl:bg-cover"
+            >
+                <div
+                    class="flex flex-col justify-center w-full md:max-w-4xl md:mx-auto"
+                >
+                    <img src="assets/images/header.png" alt="header image" />
+                    <div class="flex flex-col mt-5 space-y-3">
+                        <h2
+                            class="font-primary font-bold text-2xl text-primary leading-5 sm:text-[32px] sm:leading-7"
+                        >
+                            Discovering student’s brilliance, one project at a
+                            time
+                        </h2>
+                        <p
+                            class="font-primary font-normal text-base text-[#22407B] leading-4 sm:text-xl sm:leading-6"
+                        >
+                            Find a collection of innovative and impactful high
+                            school students’ projects established by ALL-in
+                            mentees!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="px-6 py-12 xl:px-36">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="grid grid-cols-2 gap-8 justify-between w-full md:grid-cols-4 lg:grid-cols-5"
+                    >
+                        <div
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary"
+                        >
+                            <img
+                                src="/public/assets/icons/category-1.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Business
+                            </span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary"
+                        >
+                            <img
+                                src="/public/assets/icons/category-2.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Science & Tech
+                            </span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary"
+                        >
+                            <img
+                                src="/public/assets/icons/category-3.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Art
+                            </span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary"
+                        >
+                            <img
+                                src="/public/assets/icons/category-4.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Social
+                            </span>
+                        </div>
+                        <div
+                            class="col-span-full flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary lg:col-span-1"
+                        >
+                            <img
+                                src="/public/assets/icons/category-5.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Health
+                            </span>
+                        </div>
+                    </div>
+                    <p
+                        class="mt-8 font-primary font-medium text-base text-primary text-center md:text-2xl"
+                    >
+                        Take a look around and be amazed by the creativity and
+                        potential of these talented young individuals. 
+                    </p>
+                    <a
+                        href="#"
+                        class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80"
+                    >
+                        You might just find your next <br />
+                        project idea here!
+                    </a>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="px-6 py-12 xl:px-36">
+                <div class="flex flex-col gap-4">
+                    <h3
+                        class="font-primary font-bold text-2xl text-primary lg:text-4xl"
+                    >
+                        Business
+                    </h3>
+                    <div>
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="project_card w-full h-[250px]">
+                                        <div class="front">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase1.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <h4
+                                                    class="absolute left-4 right-4 bottom-4 font-primary font-extrabold text-2xl text-primary md:text-4xl"
+                                                >
+                                                    HYDROPONICS FOR HEALTH
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase2.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <div
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col"
+                                                >
+                                                    <h5
+                                                        class="font-primary font-medium text-base text-yellow"
+                                                    >
+                                                        Patricia Widjaja
+                                                    </h5>
+                                                    <p
+                                                        class="font-primary font-normal text-base text-white leading-4"
+                                                    >
+                                                        Selling handmade masks
+                                                        and candles, as well as
+                                                        handmade items by
+                                                        disabled people at the
+                                                        Tri-Asih foundation with
+                                                        all proceeds going right
+                                                        back to charity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project_card w-full h-[250px]">
+                                        <div class="front">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase1.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <h4
+                                                    class="absolute left-4 right-4 bottom-4 font-primary font-extrabold text-2xl text-primary md:text-4xl"
+                                                >
+                                                    HYDROPONICS FOR HEALTH
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase2.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <div
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col"
+                                                >
+                                                    <h5
+                                                        class="font-primary font-medium text-base text-yellow"
+                                                    >
+                                                        Patricia Widjaja
+                                                    </h5>
+                                                    <p
+                                                        class="font-primary font-normal text-base text-white leading-4"
+                                                    >
+                                                        Selling handmade masks
+                                                        and candles, as well as
+                                                        handmade items by
+                                                        disabled people at the
+                                                        Tri-Asih foundation with
+                                                        all proceeds going right
+                                                        back to charity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project_card w-full h-[250px]">
+                                        <div class="front">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase1.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <h4
+                                                    class="absolute left-4 right-4 bottom-4 font-primary font-extrabold text-2xl text-primary md:text-4xl"
+                                                >
+                                                    HYDROPONICS FOR HEALTH
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase2.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <div
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col"
+                                                >
+                                                    <h5
+                                                        class="font-primary font-medium text-base text-yellow"
+                                                    >
+                                                        Patricia Widjaja
+                                                    </h5>
+                                                    <p
+                                                        class="font-primary font-normal text-base text-white leading-4"
+                                                    >
+                                                        Selling handmade masks
+                                                        and candles, as well as
+                                                        handmade items by
+                                                        disabled people at the
+                                                        Tri-Asih foundation with
+                                                        all proceeds going right
+                                                        back to charity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project_card w-full h-[250px]">
+                                        <div class="front">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase1.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <h4
+                                                    class="absolute left-4 right-4 bottom-4 font-primary font-extrabold text-2xl text-primary md:text-4xl"
+                                                >
+                                                    HYDROPONICS FOR HEALTH
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                                            >
+                                                <img
+                                                    src="/public/assets/images/temp/showcase2.png"
+                                                    alt="showcase 1"
+                                                    class="object-cover object-center w-full h-[250px]"
+                                                />
+                                                <div
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col"
+                                                >
+                                                    <h5
+                                                        class="font-primary font-medium text-base text-yellow"
+                                                    >
+                                                        Patricia Widjaja
+                                                    </h5>
+                                                    <p
+                                                        class="font-primary font-normal text-base text-white leading-4"
+                                                    >
+                                                        Selling handmade masks
+                                                        and candles, as well as
+                                                        handmade items by
+                                                        disabled people at the
+                                                        Tri-Asih foundation with
+                                                        all proceeds going right
+                                                        back to charity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Point -->
+            <section class="px-6 py-12 xl:px-36">
+                <div class="flex flex-col items-center gap-12">
+                    <div
+                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
+                    >
+                        <img
+                            src="assets/images/project-showcase-image-1.png"
+                            alt="project showcase image 1"
+                            class="w-full max-w-xs object-contain object-center mx-auto"
+                        />
+                        <p
+                            class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl"
+                        >
+                            Student projects play a crucial role in shaping
+                            their personal brand and enhancing their resumes for
+                            top university applications.
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
+                    >
+                        <img
+                            src="assets/images/project-showcase-image-2.png"
+                            alt="project showcase image 1"
+                            class="w-full max-w-xs object-contain object-center mx-auto md:order-1"
+                        />
+                        <p
+                            class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl"
+                        >
+                            Our mentee’s project showcase highlights the amazing
+                            projects created by high school students, driven by
+                            their passion and purpose.
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
+                    >
+                        <img
+                            src="assets/images/project-showcase-image-3.png"
+                            alt="project showcase image 1"
+                            class="w-full max-w-xs object-contain object-center mx-auto"
+                        />
+                        <p
+                            class="mt-5 font-primary font-extrabold text-lg text-primary text-center md:text-left lg:text-3xl"
+                        >
+                            Student projects play a crucial role in shaping
+                            their personal brand and enhancing their resumes for
+                            top university applications.
+                        </p>
+                    </div>
+                    <a
+                        href="#"
+                        class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80"
+                    >
+                        Start Your Project with Our <br />
+                        Mentors
+                    </a>
+                </div>
+            </section>
+
+            <!-- About US -->
+            <section class="px-6 py-12 border-b-[3rem] border-primary xl:px-36">
+                <div
+                    class="grid grid-cols-2 items-baseline gap-8 md:grid-cols-3"
+                >
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-1.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+                            ipsum
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-2.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+                            ipsum
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-3.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+                            ipsum
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-4.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+                            ipsum
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-5.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+                            ipsum
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-6.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+                            ipsum
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    620: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
