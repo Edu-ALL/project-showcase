@@ -4,19 +4,20 @@
 
 @font-face {
     font-family: "sf-pro-display";
-    src: url("/assets/fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+    src: url("../public/assets/fonts/SFPRODISPLAYREGULAR.OTF")
+        format("opentype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "sf-pro-display";
-    src: url("/assets/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+    src: url("../public/assets/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "sf-pro-display";
-    src: url("/assets/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+    src: url("../public/assets/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
     font-weight: 700;
 }
 
@@ -44,4 +45,43 @@
 
 .project_card:hover .back {
     transform: rotateY(-360deg);
+}
+
+.modal {
+    @apply z-50 fixed left-0 right-0 top-0 w-full h-full backdrop-blur-sm;
+}
+
+.modal_desc::-webkit-scrollbar-track {
+    background: #0c1734;
+}
+
+.modal_desc::-webkit-scrollbar-thumb {
+    background: #eeab54;
+}
+
+.modal_desc::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.modal_desc::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal_desc::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+.modal_desc::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.popUpSwiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: #d9d9d9;
+}
+
+.popUpSwiper .swiper-pagination-bullet-active {
+    background: #eeab54;
 }
