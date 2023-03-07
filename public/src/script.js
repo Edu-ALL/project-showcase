@@ -1,6 +1,8 @@
 /**
  * Create new card element to display into end user
  */
+let base_url = "https://migrate.all-inedu.com"
+
 function newCard(data) {
     const new_element = document.createElement("div");
     new_element.classList.add("swiper-slide");
@@ -13,9 +15,8 @@ function newCard(data) {
                 class="relative flex flex-col rounded-[20px] overflow-hidden"
             >
                 <img
-                    src="http://127.0.0.1:8000/uploaded_files/project-showcase/2023/03/${
-                        data.thumbnail
-                    }"
+                    src="${base_url}/uploaded_files/project-showcase/2023/03/${data.thumbnail
+        }"
                     alt="${data.alt}"
                     class="object-cover object-center w-full h-[250px]"
                 />
@@ -31,9 +32,8 @@ function newCard(data) {
                 class="relative flex flex-col rounded-[20px] overflow-hidden"
             >
                 <img
-                src="http://127.0.0.1:8000/uploaded_files/project-showcase/2023/03/${
-                    data.gallery[0]
-                }"
+                src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]
+        }"
                 alt="${data.name} image"
                     class="object-cover object-center w-full h-[250px]"
                 />
@@ -73,7 +73,7 @@ function newModalCarousel(image) {
     new_carousel.classList.add("swiper-slide");
     new_carousel.innerHTML = `
     <img
-        src="http://127.0.0.1:8000/uploaded_files/project-showcase/2023/03/${image}"
+        src="${base_url}/uploaded_files/project-showcase/2023/03/${image}"
         class="w-full h-[40vh] md:h-[55vh] object-cover object-center"
     />`;
     return new_carousel;
@@ -83,7 +83,7 @@ function newModalCarousel(image) {
  * Get new project from api base on category
  */
 async function getProject(end_point_category) {
-    const url = `http://127.0.0.1:8000/api/project-showcase/${end_point_category}`;
+    const url = `${base_url}/api/project-showcase/${end_point_category}`;
     let response;
 
     try {
@@ -91,6 +91,7 @@ async function getProject(end_point_category) {
     } catch (error) {
         response = error;
     }
+    console.log(response.data);
     return response;
 }
 
@@ -193,6 +194,7 @@ function generateProjectCards(category, end_point_category, parent_element) {
 
             // call build modal to build a card
             buildModal(data_cards);
+
         })
         .catch((err) => {
             console.dir(err);
