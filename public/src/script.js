@@ -1,8 +1,8 @@
+let base_url = "https://migrate.all-inedu.com";
+
 /**
  * Create new card element to display into end user
  */
-let base_url = "https://migrate.all-inedu.com"
-
 function newCard(data) {
     const new_element = document.createElement("div");
     new_element.classList.add("swiper-slide");
@@ -15,8 +15,9 @@ function newCard(data) {
                 class="relative flex flex-col rounded-[20px] overflow-hidden"
             >
                 <img
-                    src="${base_url}/uploaded_files/project-showcase/2023/03/${data.thumbnail
-        }"
+                    src="${base_url}/uploaded_files/project-showcase/2023/03/${
+        data.thumbnail
+    }"
                     alt="${data.alt}"
                     class="object-cover object-center w-full h-[250px]"
                 />
@@ -32,8 +33,9 @@ function newCard(data) {
                 class="relative flex flex-col rounded-[20px] overflow-hidden"
             >
                 <img
-                src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]
-        }"
+                src="${base_url}/uploaded_files/project-showcase/2023/03/${
+        data.gallery[0]
+    }"
                 alt="${data.name} image"
                     class="object-cover object-center w-full h-[250px]"
                 />
@@ -118,9 +120,9 @@ function buildModal(data_cards) {
     );
 
     let curr_pointer = total_project - data_cards.length;
-
     data_cards.forEach((data, it) => {
         open_modals[it + curr_pointer].addEventListener("click", () => {
+            console.log(it + curr_pointer);
             // change modal content project name value to data.project_name
             modal_content_project_name.innerHTML = data.project_name;
 
@@ -194,7 +196,6 @@ function generateProjectCards(category, end_point_category, parent_element) {
 
             // call build modal to build a card
             buildModal(data_cards);
-
         })
         .catch((err) => {
             console.dir(err);
