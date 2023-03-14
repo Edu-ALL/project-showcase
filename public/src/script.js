@@ -1,25 +1,28 @@
 let base_url = "https://migrate.all-inedu.com";
+let response_list = [];
 
 /**
  * Create new card element to display into end user
  */
 function newCard(data) {
+    const ready_data = JSON.stringify(data);
     const new_element = document.createElement("div");
     new_element.classList.add("swiper-slide");
     new_element.id = "card_content";
+    new_element.setAttribute("data-card", ready_data);
     new_element.innerHTML = `
     <div class="swiper-slide">
     <div class="project_card w-full h-[250px]">
         <div class="front w-full">
             <div
-                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                class="relative flex flex-col rounded-[20px] overflow-hidden bg-gradient-to-t from-[#DFF3FC] to-transparent"
             >
                 <img
                     src="${base_url}/uploaded_files/project-showcase/2023/03/${
-        data.thumbnail
+        data.gallery[0]
     }"
                     alt="${data.alt}"
-                    class="object-cover object-center w-full h-[250px]"
+                    class="object-cover object-center w-full h-[250px] -z-10"
                 />
                 <h4
                     class="absolute left-4 right-4 bottom-4 font-primary font-extrabold text-2xl text-primary md:text-4xl"
@@ -30,14 +33,14 @@ function newCard(data) {
         </div>
         <div class="back w-full">
             <div
-                class="relative flex flex-col rounded-[20px] overflow-hidden"
+                class="relative flex flex-col rounded-[20px] overflow-hidden bg-gradient-to-t from-primary to-transparent"
             >
                 <img
                 src="${base_url}/uploaded_files/project-showcase/2023/03/${
-        data.gallery[0]
+        data.thumbnail
     }"
                 alt="${data.name} image"
-                    class="object-cover object-center w-full h-[250px]"
+                    class="object-cover object-center w-full h-[250px] -z-10"
                 />
                 <div
                     class="absolute left-4 right-4 bottom-4 flex flex-col"
@@ -45,7 +48,7 @@ function newCard(data) {
                     <h5
                         class="font-primary font-medium text-base text-yellow"
                     >
-                        Patricia Widjaja
+                    ${data.name}
                     </h5>
                     <div
                         class="font-primary font-normal text-base text-white leading-4"
@@ -76,7 +79,7 @@ function newModalCarousel(image) {
     new_carousel.innerHTML = `
     <img
         src="${base_url}/uploaded_files/project-showcase/2023/03/${image}"
-        class="w-full h-[40vh] md:h-[55vh] object-cover object-center"
+        class="w-full h-[40vh] md:h-[65vh] object-cover object-center"
     />`;
     return new_carousel;
 }
@@ -93,17 +96,17 @@ async function getProject(end_point_category) {
     } catch (error) {
         response = error;
     }
-    console.log(response.data);
     return response;
 }
 
 /**
  * Build pop up from every exiting data
  */
-function buildModal(data_cards) {
+function buildModal() {
     // Modal
-    const modal_elment = document.querySelector(".modal");
+    const modal_element = document.querySelector(".modal");
     const modal_container = document.querySelector("#modal_container");
+    const cards = document.querySelectorAll("#card_content");
     const close_modals = document.querySelectorAll("#close_modal");
     const open_modals = document.querySelectorAll("#open_modal");
 
@@ -119,45 +122,51 @@ function buildModal(data_cards) {
         "#modal_content_gallery"
     );
 
-    let curr_pointer = total_project - data_cards.length;
-    data_cards.forEach((data, it) => {
-        open_modals[it + curr_pointer].addEventListener("click", () => {
-            console.log(it + curr_pointer);
-            // change modal content project name value to data.project_name
-            modal_content_project_name.innerHTML = data.project_name;
+    open_modals.forEach((modal_btn, it) => {
+        modal_btn.addEventListener("click", () => {
+            // parse data from atribute
+            let passing_data = JSON.parse(cards[it].getAttribute("data-card"));
 
-            // change modal content name value to data.name
-            modal_content_name.innerHTML = data.name;
+            // change modal content project name value
+            modal_content_project_name.innerHTML = passing_data.project_name;
 
-            // change modal content name.description value to data.name.description
-            modal_content_description.innerHTML = data.description;
+            // change modal content name value to
+            modal_content_name.innerHTML = passing_data.name;
+
+            // change modal content name.description value
+            modal_content_description.innerHTML = passing_data.description;
 
             // add image carousel to content galery
             // remove all image frist
             modal_content_gallery.innerHTML = "";
             // add any existing images
-            data.gallery.forEach((image) => {
+            passing_data.gallery.forEach((image) => {
                 modal_content_gallery.appendChild(newModalCarousel(image));
             });
 
             // show the modal
-            modal_elment.classList.toggle("hidden");
+            modal_element.classList.toggle("hidden");
         });
     });
 
     close_modals.forEach((modal_btn, it) => {
         modal_btn.addEventListener("click", () => {
-            modal_elment.classList.toggle("hidden");
+            modal_element.classList.toggle("hidden");
         });
     });
 
     modal_backdrop.addEventListener("click", () => {
-        modal_elment.classList.toggle("hidden");
+        modal_element.classList.toggle("hidden");
     });
 
     modal_container.addEventListener("click", () => {
-        modal_elment.classList.toggle("hidden");
+        modal_element.classList.toggle("hidden");
     });
+}
+
+async function runAsyncFunctions() {
+    await Promise.all(response_list);
+    buildModal();
 }
 
 /**
@@ -166,11 +175,22 @@ function buildModal(data_cards) {
 function generateProjectCards(category, end_point_category, parent_element) {
     const data_cards = [];
     const response = getProject(end_point_category);
+    response_list.push(response);
+    const category_id = {
+        Business: 0,
+        "Science & Tech": 1,
+        Art: 2,
+        Social: 3,
+        Health: 4,
+    };
     response
         .then((response) => {
             // repeat every existing response and it add into data_card
+
             response.data.forEach((data) => {
                 const new_data = {
+                    category_id: category_id[data.category],
+                    category: data.category,
                     project_name: data.project_name,
                     name: data.name,
                     thumbnail: data.thumbnail,
@@ -184,18 +204,16 @@ function generateProjectCards(category, end_point_category, parent_element) {
 
                 // add new data to data card
                 data_cards.push(new_data);
-
-                // increase total_project variable
-                total_project += 1;
             });
 
+            if (data_cards.length <= 0) {
+                const zero_video = document.querySelector(`.${category}`);
+                zero_video.classList.add("hidden");
+            }
             data_cards.forEach((data_card) => {
                 // show card to end user with existing data using newCard function
                 parent_element.appendChild(newCard(data_card));
             });
-
-            // call build modal to build a card
-            buildModal(data_cards);
         })
         .catch((err) => {
             console.dir(err);
@@ -221,8 +239,6 @@ function generateProjectCards(category, end_point_category, parent_element) {
     });
 }
 
-let total_project = 0;
-
 // call generate for business
 const buniness_element = document.querySelector(".business_swiper_wrapper");
 generateProjectCards("business", "business", buniness_element);
@@ -244,6 +260,9 @@ generateProjectCards("social", "social", social_element);
 // call generate for health
 const health_tech_element = document.querySelector(".health_swiper_wrapper");
 generateProjectCards("health", "health", health_tech_element);
+
+// run async function when all data has been fetch
+runAsyncFunctions();
 
 // Swiper JS
 new Swiper(".popUpSwiper", {
