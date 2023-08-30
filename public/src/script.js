@@ -1,4 +1,4 @@
-let base_url = "https://migrate.all-inedu.com";
+let base_url = "https://all-inedu.com";
 let response_list = [];
 
 /**
