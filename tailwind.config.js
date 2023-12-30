@@ -4,15 +4,16 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                banner: "url('/public/assets/images/banner.png')",
+                banner: "url('/public/assets/images/banner.webp')",
             },
             colors: {
-                primary: "#243872",
-                secondary: "#DFF3FC",
-                yellow: "#EEAB54",
+                primary: "#120FFD",
+                secondary: "#243872",
+                yellow: "#FED017",
             },
             fontFamily: {
-                primary: ["sf-pro-display", "sans-serif"],
+                primary: ["Ambit", "sans-serif"],
+                secondary: ["sf-pro-display", "sans-serif"],
             },
         },
     },
