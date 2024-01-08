@@ -73,10 +73,10 @@
 } */
 
 .active_category {
-  @apply font-bold bg-primary text-white font-primary text-xl;
+  @apply font-bold bg-primary text-white font-primary text-xl !important;
 }
 
-.inactive_category {
+.navbar_category {
   @apply font-bold text-primary font-primary border-b-2 border-primary text-xl;
 }
 
@@ -85,11 +85,11 @@
 }
 
 .category__content {
-  @apply flex flex-col gap-8 h-0 opacity-0 transition-all invisible;
+  @apply flex flex-col gap-8 h-0 opacity-0 invisible;
 }
 
 .category_content__active {
-  @apply h-full transition-all visible opacity-100 !important;
+  @apply h-full visible opacity-100 !important;
 }
 
 .project_card {
@@ -127,7 +127,7 @@
 }
 
 .modal_desc::-webkit-scrollbar-thumb {
-  background: #eeab54;
+  background: #120FFD;
 }
 
 .modal_desc::-webkit-scrollbar-thumb:hover {

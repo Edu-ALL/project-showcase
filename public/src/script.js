@@ -10,10 +10,10 @@ function newCard(data) {
   new_element.id = "open_modal";
   new_element.classList.add("card_content");
   new_element.setAttribute("data-card", ready_data);
-  //   <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" />
+  // <img src="assets/images/temp/temp1.webp" alt="${data.alt}" />
   new_element.innerHTML = `
-<div class="relative cursor-pointer">
-<img src="assets/images/temp/temp1.webp" alt="project temp 1" />
+  <div class="relative cursor-pointer">
+  <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" />
   <h2 class="absolute left-4 bottom-2 font-primary text-white text-4xl font-black uppercase">
     ${data.project_name}
   </h2>
@@ -27,11 +27,14 @@ function newCard(data) {
 function newModalCarousel(image) {
   const new_carousel = document.createElement("div");
   new_carousel.classList.add("swiper-slide");
+  // TODO: change the image date
   new_carousel.innerHTML = `
     <img
-        src="${base_url}/uploaded_files/project-showcase/2023/03/${image}"
-        class="w-full h-[40vh] md:h-[65vh] object-cover object-center"
-    />`;
+      src="${base_url}/uploaded_files/project-showcase/2023/03/${image}"
+      class="w-full h-full object-cover object-center"
+    />
+  `;
+  // class="w-full h-[40vh] md:h-[65vh] object-cover object-center"
   return new_carousel;
 }
 
@@ -61,6 +64,8 @@ function buildModal() {
   const close_modals = document.querySelectorAll("#close_modal");
   const open_modals = document.querySelectorAll("#open_modal");
 
+  console.log(open_modals);
+
   // Modal Content
   const modal_content_project_name = document.querySelector("#modal_content_project_name");
   const modal_content_name = document.querySelector("#modal_content_name");
@@ -69,10 +74,11 @@ function buildModal() {
 
   open_modals.forEach((modal_btn, it) => {
     modal_btn.addEventListener("click", () => {
+      console.log("masuk");
       // parse data from atribute
       let passing_data = JSON.parse(cards[it].getAttribute("data-card"));
 
-      console.log(passing_data)
+      console.log(passing_data);
 
       // change modal content project name value
       modal_content_project_name.innerHTML = passing_data.project_name;
@@ -119,7 +125,7 @@ async function runAsyncFunctions() {
 /**
  * Generate new project cards base on category
  */
-function generateProjectCards(category, end_point_category, parent_element) {
+function generateProjectCards(end_point_category, parent_element) {
   const data_cards = [];
   const response = getProject(end_point_category);
   response_list.push(response);
@@ -149,10 +155,10 @@ function generateProjectCards(category, end_point_category, parent_element) {
         data_cards.push(new_data);
       });
 
-    //   if (data_cards.length <= 0) {
-    //     const zero_video = document.querySelector(`.${category}`);
-    //     zero_video.classList.add("hidden");
-    //   }
+      // if (data_cards.length <= 0) {
+      //   const zero_video = document.querySelector(`.${category}`);
+      //   zero_video.classList.add("hidden");
+      // }
       data_cards.forEach((data_card) => {
         // show card to end user with existing data using newCard function
         parent_element.appendChild(newCard(data_card));
@@ -163,74 +169,49 @@ function generateProjectCards(category, end_point_category, parent_element) {
     });
 }
 
-// call generate for business
-const buniness_header = document.querySelector("#business .category__header");
-const buniness_content = document.querySelector("#business .category__content");
-generateProjectCards("business", "business", buniness_content);
-buniness_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = buniness_content;
-  buniness_content.classList.add("category_content__active");
-});
+const categoryList = {
+  business: "business",
+  science_tech: "science & tech",
+  art: "art",
+  social: "social",
+  health: "health",
+};
 
-// call generate for business
-const science_tech_header = document.querySelector("#science-tech .category__header");
-const science_tech_content = document.querySelector("#science-tech .category__content");
-generateProjectCards("science_tech", "science & tech", science_tech_content);
-science_tech_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = science_tech_content;
-  science_tech_content.classList.add("category_content__active");
-});
+const categoryKeys = {
+  business,
+  science_tech,
+  art,
+  social,
+  health,
+};
 
-// call generate for business
-const art_header = document.querySelector("#art .category__header");
-const art_content = document.querySelector("#art .category__content");
-generateProjectCards("art", "art", art_content);
-art_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = art_content;
-  art_content.classList.add("category_content__active");
-});
+let categoryElements = {};
 
-// call generate for business
-const social_header = document.querySelector("#social .category__header");
-const social_content = document.querySelector("#social .category__content");
-generateProjectCards("social", "social", social_content);
-social_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = social_content;
-  social_content.classList.add("category_content__active");
-});
+for (const categoryKey in categoryKeys) {
+  categoryElements[categoryKey] = {
+    category_wrapper: document.querySelector(`#${categoryKey}`),
+    category_header: document.querySelector(`#${categoryKey} .category__header`),
+    category_content: document.querySelector(`#${categoryKey} .category__content`),
+    category_arrow: document.querySelector(`#${categoryKey} .arrow`),
+  };
+  generateProjectCards(categoryList[categoryKey], categoryElements[categoryKey].category_content);
+  categoryElements[categoryKey].category_header.addEventListener("click", () => {
+    activateCategory(categoryKey);
+    activateLink(categoryKey);
+  });
+}
 
-// call generate for business
-const health_header = document.querySelector("#health .category__header");
-const health_content = document.querySelector("#health .category__content");
-generateProjectCards("health", "health", health_content);
-health_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = health_content;
-  health_content.classList.add("category_content__active");
-});
+let activeCategory = categoryElements["business"];
 
-let activeCategory = science_tech_content;
+function activateCategory(categoryKey) {
+  activeCategory.category_content.classList.remove("category_content__active");
+  activeCategory.category_arrow.classList.remove("rotate-180");
+  activeCategory = categoryElements[categoryKey];
+  activeCategory.category_content.classList.add("category_content__active");
+  activeCategory.category_arrow.classList.add("rotate-180");
+}
 
-// // call generate for scince
-// const science_tech_element = document.querySelector(".science_tech_swiper_wrapper");
-
-// // call generate for art
-// const art_element = document.querySelector(".art_swiper_wrapper");
-// generateProjectCards("art", "art", art_element);
-
-// // call generate for social
-// const social_element = document.querySelector(".social_swiper_wrapper");
-// generateProjectCards("social", "social", social_element);
-
-// // call generate for health
-// const health_tech_element = document.querySelector(".health_swiper_wrapper");
-// generateProjectCards("health", "health", health_tech_element);
-
-// run async function when all data has been fetch
+// // run async function when all data has been fetch
 runAsyncFunctions();
 
 // Swiper JS
@@ -244,3 +225,35 @@ new Swiper(".popUpSwiper", {
     },
   },
 });
+
+const navbarLink = document.querySelectorAll(`.navbar_category`);
+navbarLink.forEach((link) => {
+  link.addEventListener("click", () => {
+    const id = link.getAttribute("href").substring(1);
+    activateLink(id);
+    activateCategory(id);
+  });
+});
+
+function activateLink(id) {
+  const li = document.querySelector(`[href='#${id}']`);
+  oldCategoryLink.classList.remove("active_category");
+  li.classList.add("active_category");
+  oldCategoryLink = li;
+}
+let oldCategoryLink = document.querySelector(`[href='#business']`);
+const categorySection = document.querySelectorAll(".category_section");
+
+// window.onscroll = () => {
+//   categorySection.forEach((cat) => {
+//     let top = window.scrollY;
+//     let offset = cat.offsetTop;
+//     let height = cat.offsetHeight;
+//     let id = cat.getAttribute("id");
+
+//     if (top >= offset - 20 && top < offset + height) {
+//       activateLink(id);
+//       activateCategory(id);
+//     }
+//   });
+// };
