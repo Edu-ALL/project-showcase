@@ -12,8 +12,9 @@ function newCard(data) {
   new_element.setAttribute("data-card", ready_data);
   // <img src="assets/images/temp/temp1.webp" alt="${data.alt}" />
   new_element.innerHTML = `
-  <div class="relative cursor-pointer">
-  <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" />
+  <div class="relative cursor-pointer h-40">
+  <div class="w-full h-full absolute inset-0 mix-blend-multiply bg-[#120FFD33]"></div>
+  <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" class="w-full h-full object-cover object-center" />
   <h2 class="absolute left-4 bottom-2 font-primary text-white text-4xl font-black uppercase">
     ${data.project_name}
   </h2>
@@ -168,24 +169,24 @@ function generateProjectCards(end_point_category, parent_element) {
       console.dir(err);
     });
 
-  new Swiper(`.${category}`, {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      620: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
+  // new Swiper(`.${category}`, {
+  //   slidesPerView: 1,
+  //   spaceBetween: 10,
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true,
+  //   },
+  //   breakpoints: {
+  //     620: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 20,
+  //     },
+  //     1024: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 40,
+  //     },
+  //   },
+  // });
 }
 
 const categoryList = {
