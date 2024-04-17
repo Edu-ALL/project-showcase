@@ -73,11 +73,11 @@
 } */
 
 .active_category {
-  @apply font-bold bg-primary text-white font-primary text-xl !important;
+  @apply font-bold bg-black text-white font-primary text-xl !important;
 }
 
 .navbar_category {
-  @apply font-bold text-primary font-primary border-b-2 border-primary text-xl;
+  @apply font-bold text-black font-primary border-b-2 border-black text-xl;
 }
 
 .category__header {
