@@ -3,98 +3,158 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "sf-pro-display";
-    src: url("../assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
-    font-weight: 400;
+  font-family: "sf-pro-display";
+  src: url("../assets/fonts/sf-pro-display/SF-Pro-Display-Regular.otf") format("opentype");
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: "sf-pro-display";
-    src: url("../assets/fonts/SF-Pro-Display-Medium.otf") format("opentype");
-    font-weight: 500;
+  font-family: "sf-pro-display";
+  src: url("../assets/fonts/sf-pro-display/SF-Pro-Display-Medium.otf") format("opentype");
+  font-weight: 500;
 }
 
 @font-face {
-    font-family: "sf-pro-display";
-    src: url("../assets/fonts/SF-Pro-Display-Semibold_0.otf") format("opentype");
-    font-weight: 600;
+  font-family: "sf-pro-display";
+  src: url("../assets/fonts/sf-pro-display/SF-Pro-Display-Semibold_0.otf") format("opentype");
+  font-weight: 600;
 }
 
 @font-face {
-    font-family: "sf-pro-display";
-    src: url("../assets/fonts/SF-Pro-Display-Bold.otf") format("opentype");
-    font-weight: 700;
+  font-family: "sf-pro-display";
+  src: url("../assets/fonts/sf-pro-display/SF-Pro-Display-Bold.otf") format("opentype");
+  font-weight: 700;
 }
 
 @font-face {
-    font-family: "sf-pro-display";
-    src: url("../assets/fonts/SF-Pro-Display-Black.otf") format("opentype");
-    font-weight: 800;
+  font-family: "sf-pro-display";
+  src: url("../assets/fonts/sf-pro-display/SF-Pro-Display-Black.otf") format("opentype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Ambit";
+  font-weight: 900;
+  src: url("../assets/fonts/ambit/Ambit-Black.otf");
+}
+@font-face {
+  font-family: "Ambit";
+  font-weight: 700;
+  src: url("../assets/fonts/ambit/Ambit-Bold.otf");
+}
+@font-face {
+  font-family: "Ambit";
+  font-weight: 600;
+  src: url("../assets/fonts/ambit/Ambit-SemiBold.otf");
+}
+@font-face {
+  font-family: "Ambit";
+  font-weight: 400;
+  src: url("../assets/fonts/ambit/Ambit-Regular.otf");
+}
+@font-face {
+  font-family: "Ambit";
+  font-weight: 300;
+  src: url("../assets/fonts/ambit/Ambit-Light.otf");
+}
+@font-face {
+  font-family: "Ambit";
+  font-weight: 200;
+  src: url("../assets/fonts/ambit/Ambit-ExtraLight.otf");
+}
+@font-face {
+  font-family: "Ambit";
+  font-weight: 100;
+  src: url("../assets/fonts/ambit/Ambit-Thin.otf");
+}
+
+/* .category_active .category_header{
+    @apply h-full;
+} */
+
+.active_category {
+  @apply font-bold bg-primary text-white font-primary text-xl !important;
+}
+
+.navbar_category {
+  @apply font-bold text-primary font-primary border-b-2 border-primary text-xl;
+}
+
+.category__header {
+  @apply cursor-pointer;
+}
+
+.category__content {
+  @apply flex flex-col gap-8 h-0 opacity-0 invisible;
+}
+
+.category_content__active {
+  @apply h-full visible opacity-100 !important;
 }
 
 .project_card {
-    perspective: 1000px;
-    transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .project_card .front,
 .project_card .back {
-    backface-visibility: hidden;
-    transition: transform 0.6s;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
 }
 
 .project_card .back {
-    transform: rotateY(-180deg);
-    position: absolute;
-    top: 0;
-    left: 0;
+  transform: rotateY(-180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .project_card:hover .front {
-    transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 .project_card:hover .back {
-    transform: rotateY(-360deg);
+  transform: rotateY(-360deg);
 }
 
 .modal {
-    @apply z-50 fixed left-0 right-0 top-0 w-full h-full backdrop-blur-sm;
+  @apply z-50 fixed left-0 right-0 top-0 w-full h-full backdrop-blur-sm;
 }
 
 .modal_desc::-webkit-scrollbar-track {
-    background: #0c1734;
+  background: #0c1734;
 }
 
 .modal_desc::-webkit-scrollbar-thumb {
-    background: #eeab54;
+  background: #120FFD;
 }
 
 .modal_desc::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 .modal_desc::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .modal_desc::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .modal_desc::-webkit-scrollbar-track {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .popUpSwiper .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    opacity: 1;
-    background: #0c1734;
-    border: 2px solid #d9d9d9;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: #0c1734;
+  border: 2px solid #d9d9d9;
 }
 
 .popUpSwiper .swiper-pagination-bullet-active {
-    background: #eeab54;
-    border: 2px solid #d9d9d9;
+  background: #eeab54;
+  border: 2px solid #d9d9d9;
 }

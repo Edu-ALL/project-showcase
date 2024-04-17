@@ -1,412 +1,392 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Project Showcase</title>
-        <link rel="icon" href="assets/icons/favicon.png" />
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Showcase</title>
+    <link rel="icon" href="assets/icons/favicon.png" />
 
-        <link href="/public/dist/output.css" rel="stylesheet" />
+    <link href="/public/dist/output.css" rel="stylesheet" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
 
-    <body class="scroll-smooth">
-        <main>
+  <body>
+    <main>
+      <!-- Header -->
+      <section class="w-full bg-banner bg-cover bg-center px-4 xl:px-28 py-36 xl:bg-cover">
+        <div class="flex flex-col justify-center w-full md:w-1/2">
+          <div class="flex flex-col mt-5 space-y-3 text-center">
+            <h2 class="font-primary font-bold text-3xl md:text-left text-white sm:text-5xl uppercase">
+              Discovering <br />
+              student’s brilliance
+            </h2>
+            <span class="leading-8 font-primary text-white text-2xl md:text-left md:text-[42px] uppercase">
+              one project at a time
+            </span>
+            <p class="font-primary font-normal text-sm text-white leading-4 md:text-left sm:text-[18px] sm:leading-6">
+              Find a collection of innovative and impactful high school students’ <br />
+              projects established by ALL-in mentees!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="pb-12 px-6 md:px-36">
+        <div class="py-6 bg-white sticky top-0 z-10">
+          <div class="flex gap-6 items-center justify-evenly header">
+            <a href="#business" class="navbar_category active_category">Business</a>
+            <a href="#science_tech" class="navbar_category">Science & Tech</a>
+            <a href="#art" class="navbar_category">Art</a>
+            <a href="#social" class="navbar_category">Social</a>
+            <a href="#health" class="navbar_category">Health</a>
+          </div>
+        </div>
+        <div class="flex flex-col lg:max-w-4xl mx-auto mt-8 px-6 lg:px-36">
+          <!-- business -->
+          <div class="category_section pt-20 flex flex-col gap-8 transition-all" id="business">
             <!-- Header -->
-            <section
-                class="w-full bg-banner bg-contain bg-center px-6 py-12 xl:bg-cover"
-            >
-                <div
-                    class="flex flex-col justify-center w-full md:max-w-4xl md:mx-auto"
+            <div class="flex justify-between items-center category__header">
+              <h1 class="font-primary text-4xl">Business</h1>
+
+              <!-- Arrow -->
+              <div class="arrow transition-all rotate-180">
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 -4.5 20 20"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
                 >
-                    <img src="assets/images/header.png" alt="header image" />
-                    <div class="flex flex-col mt-5 space-y-3">
-                        <h2
-                            class="font-primary font-bold text-2xl text-primary leading-5 sm:text-[32px] sm:leading-7"
-                        >
-                            Discovering student’s brilliance, one project at a
-                            time
-                        </h2>
-                        <p
-                            class="font-primary font-normal text-base text-[#22407B] leading-4 sm:text-xl sm:leading-6"
-                        >
-                            Find a collection of innovative and impactful high
-                            school students’ projects established by ALL-in
-                            mentees!
-                        </p>
-                    </div>
-                </div>
-            </section>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>arrow_up [#337]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                            id="arrow_up-[#337]"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="category__content category_content__active"></div>
+          </div>
 
-            <!-- Categories -->
-            <section class="px-6 py-12 xl:px-36">
-                <div class="flex flex-col items-center">
-                    <div
-                        class="grid grid-cols-2 gap-8 justify-between w-full md:grid-cols-4 lg:grid-cols-5"
-                    >
-                        <a
-                            href="#business"
-                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
-                        >
-                            <img
-                                src="/public/assets/icons/category-1.png"
-                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
-                            />
-                            <span
-                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
-                            >
-                                Business
-                            </span>
-                        </a>
-                        <a
-                            href="#science-tech"
-                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
-                        >
-                            <img
-                                src="/public/assets/icons/category-2.png"
-                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
-                            />
-                            <span
-                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
-                            >
-                                Science & Tech
-                            </span>
-                        </a>
-                        <a
-                            href="#art"
-                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
-                        >
-                            <img
-                                src="/public/assets/icons/category-3.png"
-                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
-                            />
-                            <span
-                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
-                            >
-                                Art
-                            </span>
-                        </a>
-                        <a
-                            href="#social"
-                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
-                        >
-                            <img
-                                src="/public/assets/icons/category-4.png"
-                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
-                            />
-                            <span
-                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
-                            >
-                                Social
-                            </span>
-                        </a>
-                        <a
-                            href="#health"
-                            class="col-span-full flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary lg:col-span-1 hover:bg-secondary/50"
-                        >
-                            <img
-                                src="/public/assets/icons/category-5.png"
-                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
-                            />
-                            <span
-                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
-                            >
-                                Health
-                            </span>
-                        </a>
-                    </div>
-                    <p
-                        class="mt-8 font-primary font-medium text-base text-primary text-center md:text-2xl"
-                    >
-                        Take a look around and be amazed by the creativity and
-                        potential of these talented young individuals. 
-                    </p>
-                    <a
-                        href="#projects"
-                        class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80"
-                    >
-                        You might just find your next <br />
-                        project idea here!
-                    </a>
-                </div>
-            </section>
+          <!-- science & tech -->
+          <div class="category_section pt-20 flex flex-col gap-8 transition-all" id="science_tech">
+            <!-- Header -->
+            <div class="flex justify-between items-center category__header">
+              <h1 class="font-primary text-4xl">Science & Tech</h1>
 
-            <!-- Projects -->
-            <section id="projects" class="px-6 py-12 xl:px-36">
-                <div class="flex flex-col">
-                    <div class="pt-8" id="business">
-                        <!-- Business -->
-                        <div class="swiper mySwiper business">
-                            <h3
-                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
-                            >
-                                Business
-                            </h3>
-                            <div
-                                class="business_swiper_wrapper swiper-wrapper pb-12 mt-4"
-                            ></div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8" id="science-tech">
-                        <!-- Science & Tech -->
-                        <div class="swiper mySwiper science_tech">
-                            <h3
-                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
-                            >
-                                Science & Tech
-                            </h3>
-                            <div
-                                class="science_tech_swiper_wrapper swiper-wrapper pb-12 mt-4"
-                            ></div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8" id="art">
-                        <!-- Art -->
-                        <div class="swiper mySwiper art">
-                            <h3
-                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
-                            >
-                                Art
-                            </h3>
-                            <div
-                                class="art_swiper_wrapper swiper-wrapper pb-12 mt-4"
-                            ></div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8" id="social">
-                        <!-- Social -->
-                        <div class="swiper mySwiper social">
-                            <h3
-                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
-                            >
-                                Social
-                            </h3>
-                            <div
-                                class="social_swiper_wrapper swiper-wrapper pb-12 mt-4"
-                            ></div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8" id="health">
-                        <!-- Health -->
-                        <div class="swiper mySwiper health">
-                            <h3
-                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
-                            >
-                                Health
-                            </h3>
-                            <div
-                                class="health_swiper_wrapper swiper-wrapper pb-12 mt-4"
-                            ></div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pop Up Modal -->
-                <div class="modal hidden">
-                    <div
-                        id="modal_backdrop"
-                        class="w-full h-full flex justify-center items-center p-6"
-                    >
-                        <div
-                            id="modal_container"
-                            class="relative w-full h-full max-w-2xl bg-gradient-to-b from-[#0B1435] to-primary rounded-2xl overflow-hidden"
-                        >
-                            <div
-                                id="close_modal"
-                                class="z-[60] absolute top-8 right-0 cursor-pointer"
-                            >
-                                <span
-                                    class="block w-8 h-1 bg-white rotate-45 translate-y-1/2 -translate-x-1/2"
-                                ></span>
-                                <span
-                                    class="block w-8 h-1 bg-white -rotate-45 -translate-y-1/2 -translate-x-1/2"
-                                ></span>
-                            </div>
-                            <div class="flex flex-col">
-                                <div>
-                                    <div class="swiper popUpSwiper">
-                                        <div
-                                            id="modal_content_gallery"
-                                            class="swiper-wrapper"
-                                        ></div>
-                                        <div class="swiper-pagination"></div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex flex-col w-full h-full max-h-[50vh] mt-4 p-6 md:max-h-[25vh]"
-                                >
-                                    <h3
-                                        id="modal_content_project_name"
-                                        class="font-primary font-bold text-3xl text-yellow leading-7"
-                                    ></h3>
-                                    <span
-                                        id="modal_content_name"
-                                        class="mb-3 font-primary font-medium text-xl text-yellow"
-                                    >
-                                    </span>
-                                    <div
-                                        id="modal_content_description"
-                                        class="modal_desc w-full h-full pr-2 py-2 font-primary font-normal text-base text-white text-justify leading-6 overflow-y-auto"
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Point -->
-            <section class="px-6 py-12 xl:px-36">
-                <div class="flex flex-col items-center gap-12">
-                    <div
-                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
-                    >
-                        <img
-                            src="assets/images/project-showcase-image-1.png"
-                            alt="project showcase image 1"
-                            class="w-full max-w-xs object-contain object-center mx-auto"
-                        />
-                        <p
-                            class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl"
-                        >
-                            Student projects play a crucial role in shaping
-                            their personal brand and enhancing their resumes for
-                            top university applications.
-                        </p>
-                    </div>
-                    <div
-                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
-                    >
-                        <img
-                            src="assets/images/project-showcase-image-2.png"
-                            alt="project showcase image 1"
-                            class="w-full max-w-xs object-contain object-center mx-auto md:order-1"
-                        />
-                        <p
-                            class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl"
-                        >
-                            Our mentee’s project showcase highlights the amazing
-                            projects created by high school students, driven by
-                            their passion and purpose.
-                        </p>
-                    </div>
-                    <div
-                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
-                    >
-                        <img
-                            src="assets/images/project-showcase-image-3.png"
-                            alt="project showcase image 1"
-                            class="w-full max-w-xs object-contain object-center mx-auto"
-                        />
-                        <p
-                            class="mt-5 font-primary font-extrabold text-lg text-primary text-center md:text-left lg:text-3xl"
-                        >
-                            Student projects play a crucial role in shaping
-                            their personal brand and enhancing their resumes for
-                            top university applications.
-                        </p>
-                    </div>
-                    <a
-                        href="https://all-inedu.com/id-en/sign-me/admission-mentoring"
-                        target="_blank"
-                        class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80"
-                    >
-                        Start Your Project with Our <br />
-                        Mentors
-                    </a>
-                </div>
-            </section>
-
-            <!-- About US -->
-            <section class="px-6 py-12 border-b-[3rem] border-primary xl:px-36">
-                <div
-                    class="grid grid-cols-2 items-baseline gap-8 md:grid-cols-3"
+              <!-- Arrow Up -->
+              <div class="arrow transition-all">
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 -4.5 20 20"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
                 >
-                    <div class="flex flex-col items-center gap-4">
-                        <img
-                            src="assets/icons/about-icon-1.png"
-                            class="w-16 h-16 object-contain"
-                        />
-                        <p
-                            class="font-primary font-medium text-base text-primary text-center"
-                        >
-                            100% Students placed at target universities
-                        </p>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                        <img
-                            src="assets/icons/about-icon-2.png"
-                            class="w-16 h-16 object-contain"
-                        />
-                        <p
-                            class="font-primary font-medium text-base text-primary text-center"
-                        >
-                            More than 40 School Clients
-                        </p>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                        <img
-                            src="assets/icons/about-icon-3.png"
-                            class="w-16 h-16 object-contain"
-                        />
-                        <p
-                            class="font-primary font-medium text-base text-primary text-center"
-                        >
-                            More than 1,000 Essays Reviewed
-                        </p>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                        <img
-                            src="assets/icons/about-icon-4.png"
-                            class="w-16 h-16 object-contain"
-                        />
-                        <p
-                            class="font-primary font-medium text-base text-primary text-center"
-                        >
-                            More than 50 Corporate Partners
-                        </p>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                        <img
-                            src="assets/icons/about-icon-5.png"
-                            class="w-16 h-16 object-contain"
-                        />
-                        <p
-                            class="font-primary font-medium text-base text-primary text-center"
-                        >
-                            150+ Point SAT Score Improvement
-                        </p>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                        <img
-                            src="assets/icons/about-icon-6.png"
-                            class="w-16 h-16 object-contain"
-                        />
-                        <p
-                            class="font-primary font-medium text-base text-primary text-center"
-                        >
-                            More than 1,500 Event Participants
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </main>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>arrow_up [#337]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                            id="arrow_up-[#337]"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="category__content"></div>
+          </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <script src="src/script.js"></script>
-    </body>
+          <!-- Art -->
+          <div class="category_section pt-20 flex flex-col gap-8 transition-all" id="art">
+            <!-- Header -->
+            <div class="flex justify-between items-center category__header">
+              <h1 class="font-primary text-4xl">Art</h1>
+
+              <!-- Arrow Up -->
+              <div class="arrow transition-all">
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 -4.5 20 20"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>arrow_up [#337]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                            id="arrow_up-[#337]"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="category__content"></div>
+          </div>
+
+          <!-- Social -->
+          <div class="category_section pt-20 flex flex-col gap-8 transition-all" id="social">
+            <!-- Header -->
+            <div class="flex justify-between items-center category__header">
+              <h1 class="font-primary text-4xl">Social</h1>
+
+              <!-- Arrow Up -->
+              <div class="arrow transition-all">
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 -4.5 20 20"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>arrow_up [#337]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                            id="arrow_up-[#337]"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="category__content"></div>
+          </div>
+
+          <!-- Health -->
+          <div class="category_section pt-20 flex flex-col gap-8 transition-all" id="health">
+            <!-- Header -->
+            <div class="flex justify-between items-center category__header">
+              <h1 class="font-primary text-4xl">Health</h1>
+
+              <!-- Arrow Up -->
+              <div class="arrow transition-all">
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 -4.5 20 20"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>arrow_up [#337]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                            id="arrow_up-[#337]"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="category__content"></div>
+          </div>
+
+          <!-- Pop Up Modal -->
+          <div class="modal hidden">
+            <div id="modal_backdrop" class="w-full flex h-screen justify-center items-center p-6">
+              <div id="modal_container" class="relative w-full h-full max-w-3xl bg-black rounded-2xl overflow-hidden">
+                <div id="close_modal" class="z-[60] absolute top-8 right-0 cursor-pointer">
+                  <span class="block w-8 h-1 bg-white rotate-45 translate-y-1/2 -translate-x-1/2"></span>
+                  <span class="block w-8 h-1 bg-white -rotate-45 -translate-y-1/2 -translate-x-1/2"></span>
+                </div>
+                <div class="flex flex-col h-full">
+                  <div class="h-2/3">
+                    <div class="swiper h-full popUpSwiper">
+                      <div id="modal_content_gallery" class="swiper-wrapper"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col w-full h-1/3 mt-4 p-4 pb-8">
+                    <h3
+                      id="modal_content_project_name"
+                      class="font-primary font-extrabold text-4xl text-primary leading-7 uppercase"
+                    ></h3>
+                    <span id="modal_content_name" class="mb-3 font-primary font-bold text-2xl text-white"> </span>
+                    <div
+                      id="modal_content_description"
+                      class="modal_desc w-full h-full pr-2 py-2 font-primary font-normal text-base text-white text-justify leading-4 overflow-y-auto"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Point -->
+      <section class="px-6 py-12 xl:px-36 bg-black">
+        <div class="flex flex-col items-center gap-12">
+          <div class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10">
+            <img
+              src="assets/images/project-showcase-image-1.webp"
+              alt="project showcase image 1"
+              class="w-full max-w-xs object-contain object-center mx-auto"
+            />
+            <p class="mt-5 font-secondary font-bold text-lg text-white text-center md:text-left lg:text-3xl">
+              Student projects play a crucial role in shaping their personal brand and enhancing their resumes for top
+              university applications.
+            </p>
+          </div>
+          <div class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10">
+            <img
+              src="assets/images/project-showcase-image-2.webp"
+              alt="project showcase image 1"
+              class="w-full max-w-xs object-contain object-center mx-auto md:order-1"
+            />
+            <p class="mt-5 font-secondary font-bold text-lg text-white text-center md:text-left lg:text-3xl">
+              Our mentee’s project showcase highlights the amazing projects created by high school students, driven by
+              their passion and purpose.
+            </p>
+          </div>
+          <div class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10">
+            <img
+              src="assets/images/project-showcase-image-3.webp"
+              alt="project showcase image 1"
+              class="w-full max-w-xs object-contain object-center mx-auto"
+            />
+            <p class="mt-5 font-secondary font-extrabold text-lg text-yellow text-center md:text-left lg:text-3xl">
+              Are you inspired to create your own project and would love to learn more?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-12 xl:px-36">
+        <div class="w-full flex justify-center">
+          <a
+            href="https://all-inedu.com/id-en/sign-me/admission-mentoring"
+            target="_blank"
+            class="bg-primary font-bold text-xl font-secondary text-white py-6 px-8"
+          >
+            Start Your Project with Our Mentors
+          </a>
+        </div>
+      </section>
+
+      <!-- About US -->
+      <section class="px-6 pb-12 border-b-[3rem] border-primary xl:px-36">
+        <div class="flex flex-col justfy-center">
+          <h2 class="font-primary text-black text-2xl md:text-6xl text-center font-extrabold mb-8">ABOUT US</h2>
+          <p class="font-primary text-xl text-black text-center mx-auto max-w-3xl leading-5">
+            As an independent university consultant based in Jakarta, Indonesia, we aim to ensure that our students
+            flourish in their respective career path they aspire they have in the future.
+          </p>
+          <div class="grid grid-cols-2 items-baseline gap-8 mt-12 md:grid-cols-3">
+            <div class="flex flex-col items-center gap-4">
+              <img src="assets/icons/about-us-1.webp" class="w-16 h-16 object-contain" />
+              <p class="font-primary font-medium text-base text-secondary text-center">
+                100% Students placed at target universities
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+              <img src="assets/icons/about-us-2.webp" class="w-16 h-16 object-contain" />
+              <p class="font-primary font-medium text-base text-secondary text-center">More than 40 School Clients</p>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+              <img src="assets/icons/about-us-3.webp" class="w-16 h-16 object-contain" />
+              <p class="font-primary font-medium text-base text-secondary text-center">
+                More than 1,000 Essays Reviewed
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+              <img src="assets/icons/about-us-4.webp" class="w-16 h-16 object-contain" />
+              <p class="font-primary font-medium text-base text-secondary text-center">
+                More than 50 Corporate Partners
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+              <img src="assets/icons/about-us-5.webp" class="w-16 h-16 object-contain" />
+              <p class="font-primary font-medium text-base text-secondary text-center">
+                150+ Point SAT Score Improvement
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+              <img src="assets/icons/about-us-6.webp" class="w-16 h-16 object-contain" />
+              <p class="font-primary font-medium text-base text-secondary text-center">
+                More than 1,500 Event Participants
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="src/script.js"></script>
+
+    <script>
+      // const buniness_element = document.querySelector("#business .content");
+      // buniness_element.classList.add('')
+    </script>
+  </body>
 </html>
