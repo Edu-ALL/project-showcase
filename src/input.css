@@ -4,21 +4,32 @@
 
 @font-face {
     font-family: "sf-pro-display";
-    src: url("../public/assets/fonts/SFPRODISPLAYREGULAR.OTF")
-        format("opentype");
+    src: url("../assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "sf-pro-display";
-    src: url("../public/assets/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+    src: url("../assets/fonts/SF-Pro-Display-Medium.otf") format("opentype");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "sf-pro-display";
-    src: url("../public/assets/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+    src: url("../assets/fonts/SF-Pro-Display-Semibold_0.otf") format("opentype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "sf-pro-display";
+    src: url("../assets/fonts/SF-Pro-Display-Bold.otf") format("opentype");
     font-weight: 700;
+}
+
+@font-face {
+    font-family: "sf-pro-display";
+    src: url("../assets/fonts/SF-Pro-Display-Black.otf") format("opentype");
+    font-weight: 800;
 }
 
 .project_card {
@@ -79,9 +90,11 @@
     width: 12px;
     height: 12px;
     opacity: 1;
-    background: #d9d9d9;
+    background: #0c1734;
+    border: 2px solid #d9d9d9;
 }
 
 .popUpSwiper .swiper-pagination-bullet-active {
     background: #eeab54;
+    border: 2px solid #d9d9d9;
 }

@@ -1,275 +1,412 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project Showcase</title>
+        <link rel="icon" href="assets/icons/favicon.png" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Showcase</title>
-    <link rel="icon" href="assets/icons/favicon.png" />
+        <link href="/public/dist/output.css" rel="stylesheet" />
 
-    <link href="/dist/output.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</head>
-
-<body>
-    <main>
-        <!-- Header -->
-        <section class="w-full bg-banner bg-contain bg-center px-6 py-12 xl:bg-cover">
-            <div class="flex flex-col justify-center w-full md:max-w-4xl md:mx-auto">
-                <img src="assets/images/header.png" alt="header image" />
-                <div class="flex flex-col mt-5 space-y-3">
-                    <h2 class="font-primary font-bold text-2xl text-primary leading-5 sm:text-[32px] sm:leading-7">
-                        Discovering student’s brilliance, one project at a
-                        time
-                    </h2>
-                    <p class="font-primary font-normal text-base text-[#22407B] leading-4 sm:text-xl sm:leading-6">
-                        Find a collection of innovative and impactful high
-                        school students’ projects established by ALL-in
-                        mentees!
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Categories -->
-        <section class="px-6 py-12 xl:px-36">
-            <div class="flex flex-col items-center">
-                <div class="grid grid-cols-2 gap-8 justify-between w-full md:grid-cols-4 lg:grid-cols-5">
-                    <a href="#business"
-                        class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50">
-                        <img src="/public/assets/icons/category-1.png"
-                            class="w-16 h-16 object-contain xl:w-36 xl:h-36" />
-                        <span class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl">
-                            Business
-                        </span>
-                    </a>
-                    <a href="#science-tech"
-                        class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50">
-                        <img src="/public/assets/icons/category-2.png"
-                            class="w-16 h-16 object-contain xl:w-36 xl:h-36" />
-                        <span class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl">
-                            Science & Tech
-                        </span>
-                    </a>
-                    <a href="#art"
-                        class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50">
-                        <img src="/public/assets/icons/category-3.png"
-                            class="w-16 h-16 object-contain xl:w-36 xl:h-36" />
-                        <span class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl">
-                            Art
-                        </span>
-                    </a>
-                    <a href="#social"
-                        class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50">
-                        <img src="/public/assets/icons/category-4.png"
-                            class="w-16 h-16 object-contain xl:w-36 xl:h-36" />
-                        <span class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl">
-                            Social
-                        </span>
-                    </a>
-                    <a href="#health"
-                        class="col-span-full flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary lg:col-span-1 hover:bg-secondary/50">
-                        <img src="/public/assets/icons/category-5.png"
-                            class="w-16 h-16 object-contain xl:w-36 xl:h-36" />
-                        <span class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl">
-                            Health
-                        </span>
-                    </a>
-                </div>
-                <p class="mt-8 font-primary font-medium text-base text-primary text-center md:text-2xl">
-                    Take a look around and be amazed by the creativity and
-                    potential of these talented young individuals. 
-                </p>
-                <a href="#"
-                    class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80">
-                    You might just find your next <br />
-                    project idea here!
-                </a>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="px-6 py-12 xl:px-36">
-            <div class="flex flex-col">
-                <div class="pt-8" id="business">
-                    <!-- Business -->
-                    <div class="swiper mySwiper business">
-                        <h3 class="font-primary font-bold text-2xl text-primary lg:text-4xl">
-                            Business
-                        </h3>
-                        <div class="business_swiper_wrapper swiper-wrapper pb-12 mt-4"></div>
-                        <div class="swiper-pagination"></div>
+    <body class="scroll-smooth">
+        <main>
+            <!-- Header -->
+            <section
+                class="w-full bg-banner bg-contain bg-center px-6 py-12 xl:bg-cover"
+            >
+                <div
+                    class="flex flex-col justify-center w-full md:max-w-4xl md:mx-auto"
+                >
+                    <img src="assets/images/header.png" alt="header image" />
+                    <div class="flex flex-col mt-5 space-y-3">
+                        <h2
+                            class="font-primary font-bold text-2xl text-primary leading-5 sm:text-[32px] sm:leading-7"
+                        >
+                            Discovering student’s brilliance, one project at a
+                            time
+                        </h2>
+                        <p
+                            class="font-primary font-normal text-base text-[#22407B] leading-4 sm:text-xl sm:leading-6"
+                        >
+                            Find a collection of innovative and impactful high
+                            school students’ projects established by ALL-in
+                            mentees!
+                        </p>
                     </div>
                 </div>
+            </section>
 
-                <div class="pt-8" id="science-tech">
-                    <!-- Science & Tech -->
-                    <div class="swiper mySwiper science_tech">
-                        <h3 class="font-primary font-bold text-2xl text-primary lg:text-4xl">
-                            Science & Tech
-                        </h3>
-                        <div class="science_tech_swiper_wrapper swiper-wrapper pb-12 mt-4"></div>
-                        <div class="swiper-pagination"></div>
+            <!-- Categories -->
+            <section class="px-6 py-12 xl:px-36">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="grid grid-cols-2 gap-8 justify-between w-full md:grid-cols-4 lg:grid-cols-5"
+                    >
+                        <a
+                            href="#business"
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
+                        >
+                            <img
+                                src="/public/assets/icons/category-1.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Business
+                            </span>
+                        </a>
+                        <a
+                            href="#science-tech"
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
+                        >
+                            <img
+                                src="/public/assets/icons/category-2.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Science & Tech
+                            </span>
+                        </a>
+                        <a
+                            href="#art"
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
+                        >
+                            <img
+                                src="/public/assets/icons/category-3.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Art
+                            </span>
+                        </a>
+                        <a
+                            href="#social"
+                            class="flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary hover:bg-secondary/50"
+                        >
+                            <img
+                                src="/public/assets/icons/category-4.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Social
+                            </span>
+                        </a>
+                        <a
+                            href="#health"
+                            class="col-span-full flex flex-col items-center px-2 py-6 rounded-[20px] lg:py-4 bg-secondary lg:col-span-1 hover:bg-secondary/50"
+                        >
+                            <img
+                                src="/public/assets/icons/category-5.png"
+                                class="w-16 h-16 object-contain xl:w-36 xl:h-36"
+                            />
+                            <span
+                                class="font-primary font-bold text-lg text-primary text-center lg:mt-2 xl:text-xl"
+                            >
+                                Health
+                            </span>
+                        </a>
                     </div>
-                </div>
-
-                <div class="pt-8" id="art">
-                    <!-- Art -->
-                    <div class="swiper mySwiper art">
-                        <h3 class="font-primary font-bold text-2xl text-primary lg:text-4xl">
-                            Art
-                        </h3>
-                        <div class="art_swiper_wrapper swiper-wrapper pb-12 mt-4"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-
-                <div class="pt-8" id="social">
-                    <!-- Social -->
-                    <div class="swiper mySwiper social">
-                        <h3 class="font-primary font-bold text-2xl text-primary lg:text-4xl">
-                            Social
-                        </h3>
-                        <div class="social_swiper_wrapper swiper-wrapper pb-12 mt-4"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-
-                <div class="pt-8" id="health">
-                    <!-- Health -->
-                    <div class="swiper mySwiper health">
-                        <h3 class="font-primary font-bold text-2xl text-primary lg:text-4xl">
-                            Health
-                        </h3>
-                        <div class="health_swiper_wrapper swiper-wrapper pb-12 mt-4"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pop Up Modal -->
-            <div class="modal hidden">
-                <div id="modal_backdrop" class="w-full h-full flex justify-center items-center p-6">
-                    <div id="modal_container"
-                        class="relative w-full h-full max-w-3xl bg-gradient-to-b from-[#0B1435] to-primary rounded-2xl overflow-hidden">
-                        <div id="close_modal" class="z-[60] absolute top-8 right-0 cursor-pointer">
-                            <span class="block w-8 h-1 bg-white rotate-45 translate-y-1/2 -translate-x-1/2"></span>
-                            <span class="block w-8 h-1 bg-white -rotate-45 -translate-y-1/2 -translate-x-1/2"></span>
-                        </div>
-                        <div class="flex flex-col">
-                            <div>
-                                <div class="swiper popUpSwiper">
-                                    <div id="modal_content_gallery" class="swiper-wrapper"></div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col w-full h-full max-h-[50vh] mt-4 p-4 md:max-h-[35vh]">
-                                <h3 id="modal_content_project_name"
-                                    class="font-primary font-bold text-3xl text-yellow leading-7"></h3>
-                                <span id="modal_content_name" class="mb-3 font-primary font-medium text-xl text-yellow">
-                                </span>
-                                <div id="modal_content_description"
-                                    class="modal_desc w-full h-full pr-2 py-2 font-primary font-normal text-base text-white text-justify leading-4 overflow-y-auto">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Point -->
-        <section class="px-6 py-12 xl:px-36">
-            <div class="flex flex-col items-center gap-12">
-                <div class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10">
-                    <img src="assets/images/project-showcase-image-1.png" alt="project showcase image 1"
-                        class="w-full max-w-xs object-contain object-center mx-auto" />
-                    <p class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl">
-                        Student projects play a crucial role in shaping
-                        their personal brand and enhancing their resumes for
-                        top university applications.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10">
-                    <img src="assets/images/project-showcase-image-2.png" alt="project showcase image 1"
-                        class="w-full max-w-xs object-contain object-center mx-auto md:order-1" />
-                    <p class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl">
-                        Our mentee’s project showcase highlights the amazing
-                        projects created by high school students, driven by
-                        their passion and purpose.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10">
-                    <img src="assets/images/project-showcase-image-3.png" alt="project showcase image 1"
-                        class="w-full max-w-xs object-contain object-center mx-auto" />
                     <p
-                        class="mt-5 font-primary font-extrabold text-lg text-primary text-center md:text-left lg:text-3xl">
-                        Student projects play a crucial role in shaping
-                        their personal brand and enhancing their resumes for
-                        top university applications.
+                        class="mt-8 font-primary font-medium text-base text-primary text-center md:text-2xl"
+                    >
+                        Take a look around and be amazed by the creativity and
+                        potential of these talented young individuals. 
                     </p>
+                    <a
+                        href="#projects"
+                        class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80"
+                    >
+                        You might just find your next <br />
+                        project idea here!
+                    </a>
                 </div>
-                <a href="#"
-                    class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80">
-                    Start Your Project with Our <br />
-                    Mentors
-                </a>
-            </div>
-        </section>
+            </section>
 
-        <!-- About US -->
-        <section class="px-6 py-12 border-b-[3rem] border-primary xl:px-36">
-            <div class="grid grid-cols-2 items-baseline gap-8 md:grid-cols-3">
-                <div class="flex flex-col items-center gap-4">
-                    <img src="assets/icons/about-icon-1.png" class="w-16 h-16 object-contain" />
-                    <p class="font-primary font-medium text-base text-primary text-center">
-                        lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-                        ipsum
-                    </p>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="assets/icons/about-icon-2.png" class="w-16 h-16 object-contain" />
-                    <p class="font-primary font-medium text-base text-primary text-center">
-                        lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-                        ipsum
-                    </p>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="assets/icons/about-icon-3.png" class="w-16 h-16 object-contain" />
-                    <p class="font-primary font-medium text-base text-primary text-center">
-                        lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-                        ipsum
-                    </p>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="assets/icons/about-icon-4.png" class="w-16 h-16 object-contain" />
-                    <p class="font-primary font-medium text-base text-primary text-center">
-                        lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-                        ipsum
-                    </p>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="assets/icons/about-icon-5.png" class="w-16 h-16 object-contain" />
-                    <p class="font-primary font-medium text-base text-primary text-center">
-                        lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-                        ipsum
-                    </p>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="assets/icons/about-icon-6.png" class="w-16 h-16 object-contain" />
-                    <p class="font-primary font-medium text-base text-primary text-center">
-                        lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-                        ipsum
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
+            <!-- Projects -->
+            <section id="projects" class="px-6 py-12 xl:px-36">
+                <div class="flex flex-col">
+                    <div class="pt-8" id="business">
+                        <!-- Business -->
+                        <div class="swiper mySwiper business">
+                            <h3
+                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
+                            >
+                                Business
+                            </h3>
+                            <div
+                                class="business_swiper_wrapper swiper-wrapper pb-12 mt-4"
+                            ></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="/src/script.js"></script>
-</body>
+                    <div class="pt-8" id="science-tech">
+                        <!-- Science & Tech -->
+                        <div class="swiper mySwiper science_tech">
+                            <h3
+                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
+                            >
+                                Science & Tech
+                            </h3>
+                            <div
+                                class="science_tech_swiper_wrapper swiper-wrapper pb-12 mt-4"
+                            ></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
 
+                    <div class="pt-8" id="art">
+                        <!-- Art -->
+                        <div class="swiper mySwiper art">
+                            <h3
+                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
+                            >
+                                Art
+                            </h3>
+                            <div
+                                class="art_swiper_wrapper swiper-wrapper pb-12 mt-4"
+                            ></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8" id="social">
+                        <!-- Social -->
+                        <div class="swiper mySwiper social">
+                            <h3
+                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
+                            >
+                                Social
+                            </h3>
+                            <div
+                                class="social_swiper_wrapper swiper-wrapper pb-12 mt-4"
+                            ></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8" id="health">
+                        <!-- Health -->
+                        <div class="swiper mySwiper health">
+                            <h3
+                                class="font-primary font-bold text-2xl text-primary lg:text-4xl"
+                            >
+                                Health
+                            </h3>
+                            <div
+                                class="health_swiper_wrapper swiper-wrapper pb-12 mt-4"
+                            ></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pop Up Modal -->
+                <div class="modal hidden">
+                    <div
+                        id="modal_backdrop"
+                        class="w-full h-full flex justify-center items-center p-6"
+                    >
+                        <div
+                            id="modal_container"
+                            class="relative w-full h-full max-w-2xl bg-gradient-to-b from-[#0B1435] to-primary rounded-2xl overflow-hidden"
+                        >
+                            <div
+                                id="close_modal"
+                                class="z-[60] absolute top-8 right-0 cursor-pointer"
+                            >
+                                <span
+                                    class="block w-8 h-1 bg-white rotate-45 translate-y-1/2 -translate-x-1/2"
+                                ></span>
+                                <span
+                                    class="block w-8 h-1 bg-white -rotate-45 -translate-y-1/2 -translate-x-1/2"
+                                ></span>
+                            </div>
+                            <div class="flex flex-col">
+                                <div>
+                                    <div class="swiper popUpSwiper">
+                                        <div
+                                            id="modal_content_gallery"
+                                            class="swiper-wrapper"
+                                        ></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-col w-full h-full max-h-[50vh] mt-4 p-6 md:max-h-[25vh]"
+                                >
+                                    <h3
+                                        id="modal_content_project_name"
+                                        class="font-primary font-bold text-3xl text-yellow leading-7"
+                                    ></h3>
+                                    <span
+                                        id="modal_content_name"
+                                        class="mb-3 font-primary font-medium text-xl text-yellow"
+                                    >
+                                    </span>
+                                    <div
+                                        id="modal_content_description"
+                                        class="modal_desc w-full h-full pr-2 py-2 font-primary font-normal text-base text-white text-justify leading-6 overflow-y-auto"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Point -->
+            <section class="px-6 py-12 xl:px-36">
+                <div class="flex flex-col items-center gap-12">
+                    <div
+                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
+                    >
+                        <img
+                            src="assets/images/project-showcase-image-1.png"
+                            alt="project showcase image 1"
+                            class="w-full max-w-xs object-contain object-center mx-auto"
+                        />
+                        <p
+                            class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl"
+                        >
+                            Student projects play a crucial role in shaping
+                            their personal brand and enhancing their resumes for
+                            top university applications.
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
+                    >
+                        <img
+                            src="assets/images/project-showcase-image-2.png"
+                            alt="project showcase image 1"
+                            class="w-full max-w-xs object-contain object-center mx-auto md:order-1"
+                        />
+                        <p
+                            class="mt-5 font-primary font-bold text-lg text-primary text-center md:text-left lg:text-3xl"
+                        >
+                            Our mentee’s project showcase highlights the amazing
+                            projects created by high school students, driven by
+                            their passion and purpose.
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center md:flex-row md:gap-6 lg:gap-10"
+                    >
+                        <img
+                            src="assets/images/project-showcase-image-3.png"
+                            alt="project showcase image 1"
+                            class="w-full max-w-xs object-contain object-center mx-auto"
+                        />
+                        <p
+                            class="mt-5 font-primary font-extrabold text-lg text-primary text-center md:text-left lg:text-3xl"
+                        >
+                            Student projects play a crucial role in shaping
+                            their personal brand and enhancing their resumes for
+                            top university applications.
+                        </p>
+                    </div>
+                    <a
+                        href="https://all-inedu.com/id-en/sign-me/admission-mentoring"
+                        target="_blank"
+                        class="mt-8 px-6 py-1.5 font-primary font-semibold text-base text-white text-center rounded-full bg-yellow md:text-2xl lg:px-8 lg:py-2.5 lg:leading-6 hover:bg-yellow/80"
+                    >
+                        Start Your Project with Our <br />
+                        Mentors
+                    </a>
+                </div>
+            </section>
+
+            <!-- About US -->
+            <section class="px-6 py-12 border-b-[3rem] border-primary xl:px-36">
+                <div
+                    class="grid grid-cols-2 items-baseline gap-8 md:grid-cols-3"
+                >
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-1.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            100% Students placed at target universities
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-2.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            More than 40 School Clients
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-3.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            More than 1,000 Essays Reviewed
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-4.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            More than 50 Corporate Partners
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-5.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            150+ Point SAT Score Improvement
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img
+                            src="assets/icons/about-icon-6.png"
+                            class="w-16 h-16 object-contain"
+                        />
+                        <p
+                            class="font-primary font-medium text-base text-primary text-center"
+                        >
+                            More than 1,500 Event Participants
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="src/script.js"></script>
+    </body>
 </html>

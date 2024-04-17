@@ -7,16 +7,65 @@ let response_list = [];
 function newCard(data) {
   const ready_data = JSON.stringify(data);
   const new_element = document.createElement("div");
-  new_element.id = "open_modal";
-  new_element.classList.add("card_content");
+  new_element.classList.add("swiper-slide");
+  new_element.id = "card_content";
   new_element.setAttribute("data-card", ready_data);
-  //   <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" />
   new_element.innerHTML = `
-<div class="relative cursor-pointer">
-<img src="assets/images/temp/temp1.webp" alt="project temp 1" />
-  <h2 class="absolute left-4 bottom-2 font-primary text-white text-4xl font-black uppercase">
-    ${data.project_name}
-  </h2>
+    <div class="swiper-slide">
+    <div class="project_card w-full h-[250px]">
+        <div class="front w-full">
+            <div
+                class="relative flex flex-col rounded-[20px] overflow-hidden bg-gradient-to-t from-[#DFF3FC] to-transparent"
+            >
+                <img
+                    src="${base_url}/uploaded_files/project-showcase/2023/03/${
+    data.gallery[0]
+  }"
+                    alt="${data.alt}"
+                    class="object-cover object-center w-full h-[250px] -z-10"
+                />
+                <h4
+                    class="absolute left-4 right-4 bottom-4 font-primary font-extrabold text-2xl text-primary md:text-4xl"
+                >
+                    ${data.project_name}
+                </h4>
+            </div>
+        </div>
+        <div class="back w-full">
+            <div
+                class="relative flex flex-col rounded-[20px] overflow-hidden bg-gradient-to-t from-primary to-transparent"
+            >
+                <img
+                src="${base_url}/uploaded_files/project-showcase/2023/03/${
+    data.thumbnail
+  }"
+                alt="${data.name} image"
+                    class="object-cover object-center w-full h-[250px] -z-10"
+                />
+                <div
+                    class="absolute left-4 right-4 bottom-4 flex flex-col"
+                >
+                    <h5
+                        class="font-primary font-medium text-base text-yellow"
+                    >
+                    ${data.name}
+                    </h5>
+                    <div
+                        class="font-primary font-normal text-base text-white leading-4"
+                    >
+                        ${data.description.substring(0, 100)}...
+                    </div>
+                    <button
+                        id="open_modal"
+                        type="button"
+                        class="self-start block mt-3 px-5 py-2 font-primary font-medium text-base text-white rounded-full bg-yellow"
+                    >
+                        Read More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>`;
   return new_element;
 }
@@ -57,22 +106,26 @@ function buildModal() {
   // Modal
   const modal_element = document.querySelector(".modal");
   const modal_container = document.querySelector("#modal_container");
-  const cards = document.querySelectorAll(".card_content");
+  const cards = document.querySelectorAll("#card_content");
   const close_modals = document.querySelectorAll("#close_modal");
   const open_modals = document.querySelectorAll("#open_modal");
 
   // Modal Content
-  const modal_content_project_name = document.querySelector("#modal_content_project_name");
+  const modal_content_project_name = document.querySelector(
+    "#modal_content_project_name"
+  );
   const modal_content_name = document.querySelector("#modal_content_name");
-  const modal_content_description = document.querySelector("#modal_content_description");
-  const modal_content_gallery = document.querySelector("#modal_content_gallery");
+  const modal_content_description = document.querySelector(
+    "#modal_content_description"
+  );
+  const modal_content_gallery = document.querySelector(
+    "#modal_content_gallery"
+  );
 
   open_modals.forEach((modal_btn, it) => {
     modal_btn.addEventListener("click", () => {
       // parse data from atribute
       let passing_data = JSON.parse(cards[it].getAttribute("data-card"));
-
-      console.log(passing_data)
 
       // change modal content project name value
       modal_content_project_name.innerHTML = passing_data.project_name;
@@ -133,6 +186,7 @@ function generateProjectCards(category, end_point_category, parent_element) {
   response
     .then((response) => {
       // repeat every existing response and it add into data_card
+
       response.data.forEach((data) => {
         const new_data = {
           category_id: category_id[data.category],
@@ -141,7 +195,10 @@ function generateProjectCards(category, end_point_category, parent_element) {
           name: data.name,
           thumbnail: data.thumbnail,
           alt: data.alt,
-          gallery: data.gallery.replace('["', "").replace('"]', "").split('","'),
+          gallery: data.gallery
+            .replace('["', "")
+            .replace('"]', "")
+            .split('","'),
           description: data.description,
         };
 
@@ -149,10 +206,10 @@ function generateProjectCards(category, end_point_category, parent_element) {
         data_cards.push(new_data);
       });
 
-    //   if (data_cards.length <= 0) {
-    //     const zero_video = document.querySelector(`.${category}`);
-    //     zero_video.classList.add("hidden");
-    //   }
+      if (data_cards.length <= 0) {
+        const zero_video = document.querySelector(`.${category}`);
+        zero_video.classList.add("hidden");
+      }
       data_cards.forEach((data_card) => {
         // show card to end user with existing data using newCard function
         parent_element.appendChild(newCard(data_card));
@@ -161,74 +218,48 @@ function generateProjectCards(category, end_point_category, parent_element) {
     .catch((err) => {
       console.dir(err);
     });
+
+  new Swiper(`.${category}`, {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      620: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+  });
 }
 
 // call generate for business
-const buniness_header = document.querySelector("#business .category__header");
-const buniness_content = document.querySelector("#business .category__content");
-generateProjectCards("business", "business", buniness_content);
-buniness_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = buniness_content;
-  buniness_content.classList.add("category_content__active");
-});
+const buniness_element = document.querySelector(".business_swiper_wrapper");
+generateProjectCards("business", "business", buniness_element);
 
-// call generate for business
-const science_tech_header = document.querySelector("#science-tech .category__header");
-const science_tech_content = document.querySelector("#science-tech .category__content");
-generateProjectCards("science_tech", "science & tech", science_tech_content);
-science_tech_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = science_tech_content;
-  science_tech_content.classList.add("category_content__active");
-});
+// call generate for scince
+const science_tech_element = document.querySelector(
+  ".science_tech_swiper_wrapper"
+);
+generateProjectCards("science_tech", "science & tech", science_tech_element);
 
-// call generate for business
-const art_header = document.querySelector("#art .category__header");
-const art_content = document.querySelector("#art .category__content");
-generateProjectCards("art", "art", art_content);
-art_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = art_content;
-  art_content.classList.add("category_content__active");
-});
+// call generate for art
+const art_element = document.querySelector(".art_swiper_wrapper");
+generateProjectCards("art", "art", art_element);
 
-// call generate for business
-const social_header = document.querySelector("#social .category__header");
-const social_content = document.querySelector("#social .category__content");
-generateProjectCards("social", "social", social_content);
-social_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = social_content;
-  social_content.classList.add("category_content__active");
-});
+// call generate for social
+const social_element = document.querySelector(".social_swiper_wrapper");
+generateProjectCards("social", "social", social_element);
 
-// call generate for business
-const health_header = document.querySelector("#health .category__header");
-const health_content = document.querySelector("#health .category__content");
-generateProjectCards("health", "health", health_content);
-health_header.addEventListener("click", () => {
-  activeCategory.classList.remove("category_content__active");
-  activeCategory = health_content;
-  health_content.classList.add("category_content__active");
-});
-
-let activeCategory = science_tech_content;
-
-// // call generate for scince
-// const science_tech_element = document.querySelector(".science_tech_swiper_wrapper");
-
-// // call generate for art
-// const art_element = document.querySelector(".art_swiper_wrapper");
-// generateProjectCards("art", "art", art_element);
-
-// // call generate for social
-// const social_element = document.querySelector(".social_swiper_wrapper");
-// generateProjectCards("social", "social", social_element);
-
-// // call generate for health
-// const health_tech_element = document.querySelector(".health_swiper_wrapper");
-// generateProjectCards("health", "health", health_tech_element);
+// call generate for health
+const health_tech_element = document.querySelector(".health_swiper_wrapper");
+generateProjectCards("health", "health", health_tech_element);
 
 // run async function when all data has been fetch
 runAsyncFunctions();
