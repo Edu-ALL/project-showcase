@@ -12,10 +12,10 @@ function newCard(data) {
   new_element.setAttribute("data-card", ready_data);
   // <img src="assets/images/temp/temp1.webp" alt="${data.alt}" />
   new_element.innerHTML = `
-  <div class="relative cursor-pointer h-40">
+  <div class="relative cursor-pointer h-28 md:h-40">
   <div class="w-full h-full absolute inset-0 mix-blend-multiply bg-[#120FFD33]"></div>
   <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" class="w-full h-full object-cover object-center" />
-  <h2 class="absolute left-4 bottom-2 font-primary text-white text-4xl font-black uppercase">
+  <h2 class="absolute left-4 bottom-2 font-primary text-white md:text-4xl text-2xl font-black uppercase">
     ${data.project_name}
   </h2>
 </div>`;
