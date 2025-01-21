@@ -1,4 +1,5 @@
 let base_url = "https://edu-all.com";
+let s3_url = "https://s3-eduall.s3.ap-southeast-3.amazonaws.com/project/eduall-website"
 let response_list = [];
 
 /**
@@ -14,7 +15,7 @@ function newCard(data) {
   new_element.innerHTML = `
   <div class="relative cursor-pointer h-28 md:h-40">
   <div class="w-full h-full absolute inset-0 mix-blend-multiply bg-[#120FFD33]"></div>
-  <img src="${base_url}/uploaded_files/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" class="w-full h-full object-cover object-center" />
+  <img src="${s3_url}/project-showcase/2023/03/${data.gallery[0]}" alt="${data.alt}" class="w-full h-full object-cover object-center" />
   <h2 class="absolute left-4 bottom-2 font-primary text-white md:text-4xl text-2xl font-black uppercase">
     ${data.project_name}
   </h2>
@@ -31,7 +32,7 @@ function newModalCarousel(image) {
   // TODO: change the image date
   new_carousel.innerHTML = `
     <img
-      src="${base_url}/uploaded_files/project-showcase/2023/03/${image}"
+      src="${s3_url}/project-showcase/2023/03/${image}"
       class="w-full h-full object-cover object-center"
     />
   `;
