@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                banner: "url('/public/assets/images/banner.webp')",
+                banner: "url('../assets/images/banner.webp')",
             },
             colors: {
                 primary: "#120FFD",
